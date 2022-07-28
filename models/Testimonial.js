@@ -20,7 +20,6 @@ Testimonial.init(
     review: {
       type: DataTypes.TEXT,
       allowNull: false,
-      unique: false,
     },
   },
   {
