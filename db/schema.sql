@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS dosch_db;
+CREATE DATABASE dosch_db;
