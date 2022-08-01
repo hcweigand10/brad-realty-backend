@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, Testimonial } = require('../../models');
+const { Blog, Paragraph } = require('../../models');
 
 // GET all blogs
 router.get('/', async (req, res) => {
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [{ model: Trip }]
+      include: [{ model: Paragraph }]
     });
 
     if (!blogData) {
@@ -25,6 +25,7 @@ router.get('/:id', async (req, res) => {
 
     res.status(200).json(blogData);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

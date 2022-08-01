@@ -1,10 +1,12 @@
 [
   {
     "name": "Dwayne Johnson",
-    "review": "Brad has fantastic abs"
+    "review": "Brad has fantastic abs",
+    "email": "therock@gmail.com"
   },
   {
     "name": "AJ Sherman",
-    "review": "meh"
+    "review": "meh",
+    "email": "armance@gmail.com"
   }
 ]

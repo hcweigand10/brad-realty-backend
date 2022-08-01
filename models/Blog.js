@@ -29,36 +29,6 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    paragraph_titles: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      get() {
-          return this.getDataValue('paragraph_titles').split(';')
-      },
-      set(val) {
-         this.setDataValue('paragraph_titles',val.join(';'));
-      },
-    },
-    paragraphs: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      get() {
-          return this.getDataValue('paragraphs').split(';')
-      },
-      set(val) {
-         this.setDataValue('paragraphs',val.join(';'));
-      },
-    },
-    images: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      get() {
-          return this.getDataValue('images').split(';')
-      },
-      set(val) {
-         this.setDataValue('images',val.join(';'));
-      },
-    },
   },
   {
     sequelize,
