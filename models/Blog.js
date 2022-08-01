@@ -21,7 +21,7 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    link: {
+    date: {
       type: DataTypes.STRING,
       allowNull: false
     },
