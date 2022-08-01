@@ -25,6 +25,10 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    thumbnail: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     paragraph_titles: {
       type: DataTypes.TEXT,
       allowNull: false,
