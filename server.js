@@ -17,7 +17,6 @@ app.use(cors());
 //   origin:"https://glittery-hotteok-47aca0.netlify.app/existing"
 // }))
 
-// turn on routes
 app.use(routes);
 
 // turn on connection to db and server
