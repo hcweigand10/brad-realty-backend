@@ -17,7 +17,11 @@ Testimonial.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    location: {
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    state: {
       type: DataTypes.STRING,
       allowNull: false
     },
