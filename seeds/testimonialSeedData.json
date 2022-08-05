@@ -2,11 +2,13 @@
   {
     "name": "Dwayne Johnson",
     "review": "Brad has fantastic abs",
+    "location": "Hollywood, CA",
     "email": "therock@gmail.com"
   },
   {
     "name": "AJ Sherman",
     "review": "meh",
+    "location": "Seattle, WA",
     "email": "armance@gmail.com"
   }
 ]
