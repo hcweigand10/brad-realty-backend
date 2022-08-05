@@ -17,6 +17,10 @@ Testimonial.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     review: {
       type: DataTypes.TEXT,
       allowNull: false,
