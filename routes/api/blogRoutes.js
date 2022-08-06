@@ -60,4 +60,50 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// UPDATE a blog
+router.put('/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.Update({
+      isFeatured: req.body.isFeatured
+    },
+    { 
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (!blogData) {
+      res.status(404).json({ message: 'No blog found with this id!' });
+      return;
+    }
+
+    res.status(200).json({ message: 'Successfully deleted!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// remove featured
+router.put('/featured', async (req, res) => {
+  try {
+    const blogData = await Blog.Update({
+      isFeatured: req.body.isFeatured
+    },
+    { 
+      where: {
+        isFeatured: true
+      }
+    });
+
+    if (!blogData) {
+      res.status(404).json({ message: 'No blog found with this id!' });
+      return;
+    }
+
+    res.status(200).json({ message: 'Successfully deleted!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
