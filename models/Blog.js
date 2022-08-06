@@ -29,6 +29,10 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    isFeatured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   },
   {
     sequelize,
