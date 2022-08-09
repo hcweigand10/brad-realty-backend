@@ -3,8 +3,13 @@ const { Blog, Paragraph } = require('../../models');
 
 // GET all blogs
 router.get('/', async (req, res) => {
+  console.log('blogs: request')
   try {
-    const blogData = await Blog.findAll();
+    const blogData = await Blog.findAll({
+      include: [
+        {model: Paragraph}
+      ]
+    });
     res.status(200).json(blogData);
   } catch (err) {
     res.status(500).json(err);
@@ -62,8 +67,10 @@ router.delete('/:id', async (req, res) => {
 
 // UPDATE a blog
 router.put('/:id', async (req, res) => {
+  console.log("update request")
   try {
-    const blogData = await Blog.Update({
+    const blogData = await Blog.update(
+    {
       isFeatured: req.body.isFeatured
     },
     { 
@@ -71,39 +78,18 @@ router.put('/:id', async (req, res) => {
         id: req.params.id
       }
     });
+    console.log(blogData)
 
     if (!blogData) {
       res.status(404).json({ message: 'No blog found with this id!' });
       return;
     }
 
-    res.status(200).json({ message: 'Successfully deleted!' });
+    res.status(200).json({ message: 'Successfully updated!' });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// remove featured
-router.put('/featured', async (req, res) => {
-  try {
-    const blogData = await Blog.Update({
-      isFeatured: req.body.isFeatured
-    },
-    { 
-      where: {
-        isFeatured: true
-      }
-    });
-
-    if (!blogData) {
-      res.status(404).json({ message: 'No blog found with this id!' });
-      return;
-    }
-
-    res.status(200).json({ message: 'Successfully deleted!' });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;
