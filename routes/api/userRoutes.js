@@ -27,7 +27,7 @@ router.post("/login", async (req, res) => {
               // DELPOYED:
               process.env.JWT_SECRET,
               {
-                expiresIn: "2m"
+                expiresIn: "6h"
               }
             );
             res.json({ 
