@@ -23,12 +23,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // // LOCAL
-app.use(cors());
+// app.use(cors());
 
 // DEPLOYED
-// app.use(cors({
-//   origin:"https://glittery-hotteok-47aca0.netlify.app/existing"
-// }))
+app.use(cors({
+  origin:"http://localhost:3001"
+}))
 
 app.use(routes);
 
