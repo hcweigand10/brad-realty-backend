@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // DEPLOYED
 app.use(cors({
-  origin: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://profound-lollipop-4eb9d0.netlify.app"
+  origin: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://main--profound-lollipop-4eb9d0.netlify.app"
 }))
 
 app.use(routes);
