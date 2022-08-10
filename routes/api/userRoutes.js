@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 
 router.post("/login", async (req, res) => {
     console.log(`login attempt from: `, req.body)
+    console.log("login2")
     const dbUser = await User.findOne({
         where: {
             email:req.body.email
