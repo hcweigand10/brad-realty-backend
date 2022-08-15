@@ -22,13 +22,16 @@ const sess = {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const corsOptions = {
+  origin: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://profound-lollipop-4eb9d0.netlify.app",
+  credentials:true, 
+}
+
 // // LOCAL
 // app.use(cors());
 
 // DEPLOYED
-app.use(cors({
-  origin: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://profound-lollipop-4eb9d0.netlify.app"
-}))
+app.use(cors(corsOptions))
 
 app.use(routes);
 
