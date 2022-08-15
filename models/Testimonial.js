@@ -36,22 +36,18 @@ Testimonial.init(
     local_knowledge: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
     },
     process_expertise: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
     },
     responsiveness: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
     },
     negotiation_skills: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
     },
   },
   {
