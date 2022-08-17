@@ -10,7 +10,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'sharingwood',
   cookie: {maxAge: 12000000},
   resave: false,
   saveUninitialized: true,
@@ -18,6 +18,8 @@ const sess = {
     db: sequelize
   })
 };
+
+app.use(session(sess))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
