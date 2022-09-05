@@ -32,12 +32,11 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cors(corsOptions))
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://localhost:3000', 'https://profound-lollipop-4eb9d0.netlify.app'];
+  const allowedOrigins = ['http://localhost:3000', 'https://profound-lollipop-4eb9d0.netlify.app', 'http://bradleydosch.com/', 'https://bradleydosch.com/' ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
        res.setHeader('Access-Control-Allow-Origin', origin);
   }
-  //res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8020');
   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, POST, PUT, DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Credentials', true);
