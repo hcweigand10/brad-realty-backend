@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cors(corsOptions))
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://localhost:3000', 'https://profound-lollipop-4eb9d0.netlify.app', 'http://bradleydosch.com/', 'https://bradleydosch.com/' ];
+  const allowedOrigins = ['http://localhost:3000', 'https://profound-lollipop-4eb9d0.netlify.app', 'http://bradleydosch.com', 'https://bradleydosch.com' ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
        res.setHeader('Access-Control-Allow-Origin', origin);
