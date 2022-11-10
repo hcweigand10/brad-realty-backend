@@ -1,13 +1,13 @@
-import session, { Store } from 'express-session';
-import express, { json, urlencoded } from 'express';
-import routes from './routes';
-import cors from "cors";
+const express = require('express');
+const session = require('express-session');
+const routes = require('./routes');
+const cors = require("cors")
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-import sequelize, { sync } from './config/connection';
-const SequelizeStore = require('connect-session-sequelize')(Store);
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: 'sharingwood',
@@ -21,8 +21,8 @@ const sess = {
 
 app.use(session(sess))
 
-app.use(json());
-app.use(urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 // // LOCAL
@@ -46,6 +46,6 @@ app.use((req, res, next) => {
 app.use(routes);
 
 // turn on connection to db and server
-sync({ force: false }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
